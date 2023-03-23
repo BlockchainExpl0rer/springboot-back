@@ -13,7 +13,7 @@ import static jakarta.persistence.GenerationType.AUTO;
  * Classe qui permet de créer un Role pour un utilisateur
  *
  * @author QArthur13
- * @version 1.O fdsfdsfsdfsdfsdfsdfsdf
+ * @version 1.O
  * @since 19
  */
 @Entity

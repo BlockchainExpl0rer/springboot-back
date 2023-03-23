@@ -15,6 +15,7 @@ public interface RoleRepo extends JpaRepository<Role, Long>
     /**
      * Trouve un nom de rôle
      *
+     * @since 19
      * @param name Le nom du rôle
      * @return Le rôle recherché
      */

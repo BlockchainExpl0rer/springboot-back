@@ -4,7 +4,7 @@ import com.projet.api.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- * Pour récupérer toutes les requêtes de la table User
+ * Récupère toutes les requêtes de la table User
  *
  * @author QArthur13
  * @version 1.0
@@ -15,6 +15,7 @@ public interface UserRepo extends JpaRepository<User, Long>
     /**
      * Trouve un email dans la base de donnée
      *
+     * @since 19
      * @param email Le nom de l'email
      * @return L'email recherché
      */
