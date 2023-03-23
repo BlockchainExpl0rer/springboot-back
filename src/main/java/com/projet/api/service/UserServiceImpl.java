@@ -37,6 +37,7 @@ public class UserServiceImpl implements UserService
     @Override
     public User saveUser(User user)
     {
+        log.info("Enregistrement d'un nouvel user {} dans la BDD!", user.getFirstName());
         return userRepo.save(user);
     }
 
@@ -50,6 +51,7 @@ public class UserServiceImpl implements UserService
     @Override
     public Role saveRole(Role role)
     {
+        log.info("Enregistrement d'un nouvel role {} dans la BDD!", role.getName());
         return roleRepo.save(role);
     }
 
@@ -63,6 +65,7 @@ public class UserServiceImpl implements UserService
     @Override
     public void addRoleToUser(String email, String roleName)
     {
+        log.info("Ajout d'un role {} à un user {}!", roleName, email);
         User user = userRepo.findByEmail(email);
         Role role = roleRepo.findByName(roleName);
 
@@ -79,6 +82,7 @@ public class UserServiceImpl implements UserService
     @Override
     public User getUser(String email)
     {
+        log.info("Fetching d'un user {}!", email);
         return userRepo.findByEmail(email);
     }
 
@@ -91,6 +95,7 @@ public class UserServiceImpl implements UserService
     @Override
     public List<User> getUsers()
     {
+        log.info("Fetching des users!");
         return userRepo.findAll();
     }
 }
