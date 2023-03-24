@@ -45,10 +45,10 @@ public class UserController
      * @return L'user, créer
      * @since 19
      */
-    @GetMapping("/user/save")
+    @PostMapping("/users")
     public ResponseEntity<User>saveUser(@RequestBody User user)
     {
-        URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/user/save").toUriString());
+        URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/users").toUriString());
 
         return ResponseEntity.created(uri).body(userService.saveUser(user));
     }
@@ -60,22 +60,22 @@ public class UserController
      * @return Le rôle crée
      * @since 19
      */
-    @PostMapping("/role/save")
+    @PostMapping("/roles")
     public ResponseEntity<Role>saveRole(@RequestBody Role role)
     {
-        URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/role/save").toUriString());
+        URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/roles").toUriString());
 
         return ResponseEntity.created(uri).body(userService.saveRole(role));
     }
 
     /**
-     * Ajoute un rôle à un user
+     * Assigne un rôle à un user
      *
      * @param form Les infos du form
      * @return Un rôle à un user
      * @since 19
      */
-    @PostMapping("/role/addToUser")
+    @PatchMapping("/users")
     public ResponseEntity<?>addRoleToUser(@RequestBody RoleToUserForm form)
     {
         userService.addRoleToUser(form.getEmail(), form.getRoleName());
