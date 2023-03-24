@@ -17,44 +17,44 @@ public interface UserService
     /**
      * Enregistre un utilisateur
      *
-     * @since 19
      * @param user L'user qui va être créé
      * @return L'utilisateur crée
+     * @since 19
      */
     User saveUser(User user);
 
     /**
      * Enregistre un rôle
      *
-     * @since 19
      * @param role Le rôle qui va être créé
      * @return Le role crée
+     * @since 19
      */
     Role saveRole(Role role);
 
     /**
      * Ajoute un rôle à l'utilisateur
      *
-     * @since 19
      * @param email L'email de l'user
      * @param roleName Le rôle qui va être adressé à l'user
+     * @since 19
      */
     void addRoleToUser(String email, String roleName);
 
     /**
      * Récupère un utilisateur en fonction de son email
      *
-     * @since 19
      * @param email L'email de l'user
      * @return Un user
+     * @since 19
      */
     User getUser(String email);
 
     /**
      * Récupère tous les utilisateurs
      *
-     * @since 19
      * @return Des users
+     * @since 19
      */
     List<User>getUsers();
 }
