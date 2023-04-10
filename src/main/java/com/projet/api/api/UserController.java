@@ -39,6 +39,17 @@ public class UserController
     }
 
     /**
+     * Récupère un user en fonction de son id
+     *
+     * @param userId L'id de l'user
+     */
+    @GetMapping("/users/{userId}")
+    public void getUser(@PathVariable("userId") Long userId)
+    {
+        userService.getUser(userId);
+    }
+
+    /**
      * Ajoute un utilisateur
      *
      * @param user Le futur user
@@ -48,7 +59,7 @@ public class UserController
     @PostMapping("/users")
     public ResponseEntity<User>saveUser(@RequestBody User user)
     {
-        URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/users").toUriString());
+        URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/v1/users").toUriString());
 
         return ResponseEntity.created(uri).body(userService.saveUser(user));
     }

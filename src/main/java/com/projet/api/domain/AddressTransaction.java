@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 import static jakarta.persistence.GenerationType.AUTO;
 
 /**
- * Classe pour les transactions de la crypto
+ * Classe pour les transactions de la crypto Ethereum
  *
  * @author QArthur13
  * @version 1.0

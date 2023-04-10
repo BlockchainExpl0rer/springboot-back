@@ -28,6 +28,45 @@ public class UserServiceImpl implements UserService
     private final RoleRepo roleRepo;
 
     /**
+     * Récupère tous les utilisateurs
+     *
+     * @return Des users
+     * @since 19
+     */
+    @Override
+    public List<User> getUsers()
+    {
+        log.info("Fetching des users!");
+        return userRepo.findAll();
+    }
+
+    /**
+     * Récupère un utilisateur en fonction de son id
+     *
+     * @param userId L'id de l'user
+     */
+    @Override
+    public void getUser(Long userId)
+    {
+        log.info("Fetching d'un user {}!", userId);
+        userRepo.findById(userId);
+    }
+
+    /**
+     * Récupère un utilisateur en fonction de son email
+     *
+     * @param email L'email de l'user
+     * @return Un user
+     * @since 19
+     */
+    @Override
+    public User getUser(String email)
+    {
+        log.info("Fetching d'un user {}!", email);
+        return userRepo.findByEmail(email);
+    }
+
+    /**
      * Enregistre un utilisateur
      *
      * @param user L'user qui va être créé
@@ -70,32 +109,5 @@ public class UserServiceImpl implements UserService
         Role role = roleRepo.findByName(roleName);
 
         user.getRoles().add(role);
-    }
-
-    /**
-     * Récupère un utilisateur en fonction de son email
-     *
-     * @param email L'email de l'user
-     * @return Un user
-     * @since 19
-     */
-    @Override
-    public User getUser(String email)
-    {
-        log.info("Fetching d'un user {}!", email);
-        return userRepo.findByEmail(email);
-    }
-
-    /**
-     * Récupère tous les utilisateurs
-     *
-     * @return Des users
-     * @since 19
-     */
-    @Override
-    public List<User> getUsers()
-    {
-        log.info("Fetching des users!");
-        return userRepo.findAll();
     }
 }

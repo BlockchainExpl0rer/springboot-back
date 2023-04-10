@@ -1,8 +1,10 @@
 package com.projet.api.service;
 
 import com.projet.api.domain.AddressTransaction;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Déclaration des actions CRUD sur le model AddressTransaction
@@ -14,6 +16,30 @@ import java.util.List;
 public interface AddressTransactionService
 {
     /**
+     * Récupère toutes les transactions
+     *
+     * @return Une liste des transactions
+     * @since 19
+     */
+    List<AddressTransaction>getTransactions();
+
+    /**
+     * Récupère une transaction en fonction de son id
+     *
+     * @param transactionId L'id de la transaction
+     */
+    void getTransaction(Long transactionId);
+
+    /**
+     * Récupère une transaction en fonction du nom de sa transaction
+     *
+     * @param stringId Le nom de la transaction
+     * @return La transaction récupère
+     * @since 19
+     */
+    AddressTransaction getTransaction(String stringId);
+
+    /**
      * Enregistre une transaction
      *
      * @param addressTransaction La transaction qui va être sauvegardé
@@ -23,19 +49,18 @@ public interface AddressTransactionService
     AddressTransaction saveTransaction(AddressTransaction addressTransaction);
 
     /**
-     * Récupère un nom d'une transaction
+     * Mets à jour une transaction
      *
-     * @param stringId Le nom de la transaction
-     * @return La transaction récupère
-     * @since 19
+     * @param transactionId L'id de la transaction
+     * @param stringId Le nom de la nouvelle transaction
      */
-    AddressTransaction getTransaction(String stringId);
+    void updateTransaction(Long transactionId, String stringId);
 
     /**
-     * Récupère toutes les transactions
+     * Supprime une transaction
      *
-     * @return Une liste des transactions
-     * @since 19
+     * @param transactionId L'id de la transaction
      */
-    List<AddressTransaction>getTransactions();
+    void deleteTransaction(Long transactionId);
+
 }

@@ -15,6 +15,30 @@ import java.util.List;
 public interface UserService
 {
     /**
+     * Récupère tous les utilisateurs
+     *
+     * @return Des users
+     * @since 19
+     */
+    List<User>getUsers();
+
+    /**
+     * Récupère un utilisateur en fonction de son id
+     *
+     * @param userId L'id de l'user
+     */
+    void getUser(Long userId);
+
+    /**
+     * Récupère un utilisateur en fonction de son email
+     *
+     * @param email L'email de l'user
+     * @return Un user
+     * @since 19
+     */
+    User getUser(String email);
+
+    /**
      * Enregistre un utilisateur
      *
      * @param user L'user qui va être créé
@@ -40,21 +64,4 @@ public interface UserService
      * @since 19
      */
     void addRoleToUser(String email, String roleName);
-
-    /**
-     * Récupère un utilisateur en fonction de son email
-     *
-     * @param email L'email de l'user
-     * @return Un user
-     * @since 19
-     */
-    User getUser(String email);
-
-    /**
-     * Récupère tous les utilisateurs
-     *
-     * @return Des users
-     * @since 19
-     */
-    List<User>getUsers();
 }

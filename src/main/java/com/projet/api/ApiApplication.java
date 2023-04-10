@@ -18,7 +18,8 @@ import java.util.ArrayList;
  * @since 19
  */
 @SpringBootApplication
-public class ApiApplication {
+public class ApiApplication
+{
 
 	/**
 	 * Initialise l'app
