@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import static javax.persistence.GenerationType.AUTO;
 
 /**
- * Classe pour les transactions de la crypto
+ * Classe pour les transactions de la crypto Ethereum
  *
  * @author QArthur13
  * @version 1.0

@@ -11,7 +11,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @since 19
  */
 @SpringBootApplication
-public class ApiApplication {
+public class ApiApplication
+{
 
 	public static void main(String[] args) {
 		SpringApplication.run(ApiApplication.class, args);
