@@ -1,29 +1,39 @@
 package com.projet.api.domain;
+import javax.persistence.*;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-import static jakarta.persistence.GenerationType.AUTO;
-
-/**
- * Classe qui permet de créer un Role pour un utilisateur
- *
- * @author QArthur13
- * @version 1.O
- * @since 19
- */
 @Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class Role
-{
+@Table(name = "roles")
+public class Role {
     @Id
-    @GeneratedValue(strategy = AUTO)
-    private Long id;
-    private String name;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Enumerated(EnumType.STRING)
+    @Column(length = 20)
+    private ERole name;
+
+    public Role() {
+
+    }
+
+    public Role(ERole name) {
+        this.name = name;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public ERole getName() {
+        return name;
+    }
+
+    public void setName(ERole name) {
+        this.name = name;
+    }
 }

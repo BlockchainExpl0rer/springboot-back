@@ -1,4 +1,4 @@
-package com.projet.api.domain.repo;
+package com.projet.api.repo;
 
 import com.projet.api.domain.AddressTransaction;
 import org.springframework.data.jpa.repository.JpaRepository;
